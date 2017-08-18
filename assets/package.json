@@ -7,12 +7,16 @@
   },
   "dependencies": {
     "phoenix": "file:../deps/phoenix",
-    "phoenix_html": "file:../deps/phoenix_html"
+    "phoenix_html": "file:../deps/phoenix_html",
+    "sass-brunch": "^2.10.4"
   },
   "devDependencies": {
     "babel-brunch": "6.1.1",
+    "breakpoint-sass": "^2.7.1",
     "brunch": "2.10.9",
     "clean-css-brunch": "2.10.0",
+    "compass-mixins": "^0.12.10",
+    "susy": "^2.2.12",
     "uglify-js-brunch": "2.10.0"
   }
 }

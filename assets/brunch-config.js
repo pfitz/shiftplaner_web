@@ -47,7 +47,18 @@ exports.config = {
     babel: {
       // Do not use ES6 compiler in vendor code
       ignore: [/vendor/]
-    }
+    },
+      sass: {
+          mode: "native",
+          options: {
+              includePaths: [
+                'node_modules/susy/sass',
+                  'node_modules/breakpoint-sass/stylesheets',
+                  'node_modules/compass-mixins/lib'
+            ]
+          }
+
+      }
   },
 
   modules: {

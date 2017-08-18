@@ -1,0 +1,101 @@
+@import "compass";
+@import "compass/reset";
+@import "susy";
+@import "breakpoint";
+
+$susy: (
+        columns: 12,
+        gutters: 1/4,
+        math: fluid,
+        output: float,
+        gutter-position: inside,
+        box-sizing: border-box,
+);
+
+body {
+  @include box-sizing(border-box);
+}
+
+$phone: 320px;
+$iPad: 640px;
+$desktop: 960px;
+
+h1 {
+  font-size: 200%;
+  text-align: center;
+}
+
+h2 {
+  font-size: 120%;
+}
+
+.container {
+  margin: 10px;
+  width: 320px;
+
+  @include container;
+
+  @include breakpoint($iPad) {
+    width: $iPad;
+  }
+
+  @include breakpoint($desktop) {
+    width: $desktop;
+  }
+
+  .weekend {
+    @include span(12 of 12);
+    //background-color: darkgrey;
+
+    .weekend-title {
+      float: right;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    @include breakpoint($iPad) {
+      @include span(6 of 12);
+    }
+
+    @include breakpoint($desktop) {
+      @include span(4 of 12);
+    }
+  }
+
+  .day {
+    @include span(12 of 12);
+    border: 1px solid black;
+    @include box-shadow(0px 0px 5px);
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    //background-color: grey;
+
+    .day-title {
+      //width: span(12 of 12);
+      padding-left: gutters(1/4);
+      text-align: center;
+    }
+
+    .shift {
+      border: 1px solid black;
+      @include span(12 of 12);
+
+      .shift-title {
+        width: span(12 of 12);
+        float: left;
+        background-color: #efefef;
+        border-bottom: 2px double black;
+      }
+      .person-role {
+        @include span(4 of 12);
+        border-right: 2px dotted darkgrey;
+      }
+
+      .person-name {
+        @include span(8 of 12 last);
+        padding-left: 10px;
+      }
+    }
+  }
+}
