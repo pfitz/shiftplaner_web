@@ -40,3 +40,22 @@ config :shiftplaner, Shiftplaner.Repo,
   password: "Frdrich16",
   hostname: "localhost",
   port: "5432"
+
+# Watch static and templates for browser reloading.
+config :shiftplaner_web, ShiftplanerWebWeb.Endpoint,
+       live_reload: [
+         patterns: [
+           ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
+           ~r{priv/gettext/.*(po)$},
+           ~r{lib/shiftplaner_web_web/views/.*(ex)$},
+           ~r{lib/shiftplaner_web_web/templates/.*(eex)$}
+         ]
+       ]
+
+# Do not include metadata nor timestamps in development logs
+config :logger, :console, format: "[$level] $message\n"
+
+# Set a higher stacktrace during development. Avoid configuring such
+# in production as building large stacktraces may be expensive.
+config :phoenix, :stacktrace_depth, 20
+

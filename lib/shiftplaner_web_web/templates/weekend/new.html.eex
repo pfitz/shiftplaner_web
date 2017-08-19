@@ -1,0 +1,5 @@
+<h2>New Weekend</h2>
+
+<%= render "form.html", Map.put(assigns, :action, event_weekend_path(@conn, :create, @event)) %>
+
+<span><%= link "Back", to: event_weekend_path(@conn, :index, @event) %></span>

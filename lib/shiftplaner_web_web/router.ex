@@ -26,6 +26,20 @@ defmodule ShiftplanerWebWeb.Router do
     pipe_through [:browser, :admin_layout]
 
     get "/", AdminController, :index
+
+    resources "/events", EventController do
+      resources "/weekends", WeekendController do
+        resources "/days", DayController
+      end
+    end
+
+
+    scope "/person" do
+      get "/", PersonController, :index
+      get "/new", PersonController, :create
+      put "/edit/:id", PersonController, :edit
+      delete "/delete/:id", PersonController, :delete
+    end
   end
   # Other scopes may use custom stacks.
   # scope "/api", ShiftplanerWebWeb do

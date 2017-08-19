@@ -1,0 +1,13 @@
+<h2>Show Day</h2>
+
+<ul>
+
+  <li>
+    <strong>Date:</strong>
+    <%= @day.date %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: event_weekend_day_path(@conn, :edit, @event_id, @weekend_id, @day) %></span>
+<span><%= link "Back", to: event_weekend_day_path(@conn, :index, @event_id, @weekend_id) %></span>

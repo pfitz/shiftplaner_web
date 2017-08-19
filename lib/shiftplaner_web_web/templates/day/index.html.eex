@@ -1,0 +1,26 @@
+<h2>Listing Days</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Date</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for day <- @days do %>
+    <tr>
+      <td><%= day.date %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: event_weekend_day_path(@conn, :show, @event_id, @weekend_id, day), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: event_weekend_day_path(@conn, :edit, @event_id, @weekend_id, day), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: event_weekend_day_path(@conn, :delete, @event_id, @weekend_id, day), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Day", to: event_weekend_day_path(@conn, :new, @event_id, @weekend_id) %></span>

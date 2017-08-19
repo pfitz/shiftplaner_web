@@ -1,0 +1,8 @@
+<h2>Show Weekend</h2>
+
+<ul>
+
+</ul>
+
+<span><%= link "Edit", to: event_weekend_path(@conn, :edit, @event) %></span>
+<span><%= link "Back", to: event_weekend_path(@conn, :index, @event) %></span>
