@@ -1,0 +1,5 @@
+<h1><%= @event.name %> </h1>
+
+<%= for weekend <- @event.weekends do %>
+    <%= render "weekend.html", weekend: weekend %>
+<% end %>

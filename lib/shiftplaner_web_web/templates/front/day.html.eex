@@ -1,0 +1,5 @@
+<div class="day"><span class="day-title"><%= day_of_week(@day) %></span>
+    <%= for shift <- @day.shifts do %>
+        <%= render "shift.html", shift: shift %>
+    <% end %>
+</div>

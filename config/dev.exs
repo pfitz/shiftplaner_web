@@ -7,12 +7,12 @@ use Mix.Config
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
 config :shiftplaner_web, ShiftplanerWebWeb.Endpoint,
-  http: [port: 4000],
-  debug_errors: true,
-  code_reloader: true,
-  check_origin: false,
-  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
-                    cd: Path.expand("../assets", __DIR__)]]
+       http: [port: 4000],
+       debug_errors: true,
+       code_reloader: true,
+       check_origin: false,
+       watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
+         cd: Path.expand("../assets", __DIR__)]]
 
 # ## SSL Support
 #
@@ -31,19 +31,12 @@ config :shiftplaner_web, ShiftplanerWebWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :shiftplaner_web, ShiftplanerWebWeb.Endpoint,
-  live_reload: [
-    patterns: [
-      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
-      ~r{priv/gettext/.*(po)$},
-      ~r{lib/shiftplaner_web_web/views/.*(ex)$},
-      ~r{lib/shiftplaner_web_web/templates/.*(eex)$}
-    ]
-  ]
 
-# Do not include metadata nor timestamps in development logs
-config :logger, :console, format: "[$level] $message\n"
 
-# Set a higher stacktrace during development. Avoid configuring such
-# in production as building large stacktraces may be expensive.
-config :phoenix, :stacktrace_depth, 20
+config :shiftplaner, Shiftplaner.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  database: "shiftplaner_dev",
+  username: "pfitz",
+  password: "Frdrich16",
+  hostname: "localhost",
+  port: "5432"
