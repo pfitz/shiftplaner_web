@@ -16,9 +16,9 @@ body {
   @include box-sizing(border-box);
 }
 
-$phone: 320px;
-$iPad: 640px;
-$desktop: 960px;
+$phone: screen 320px 639px;
+$iPad: screen 640px 959px, min-resolution 2.0dppx;
+$desktop: 960px, min-resolution 1.0dppx;
 
 h1 {
   font-size: 200%;
@@ -36,11 +36,11 @@ h2 {
   @include container;
 
   @include breakpoint($iPad) {
-    width: $iPad;
+    width: 960px;
   }
 
   @include breakpoint($desktop) {
-    width: $desktop;
+    width: 960px;
   }
 
   .weekend {

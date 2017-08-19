@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SchrÃ¶ter Schichtplan Mosel-Wein-Nachts-Markt 2016</title>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+
+<body>
+<div class="container">
+    <h1>Schichtplan MWNM 2016 </h1>
+
+    <div class="weekend">
+        <h2 class="weekend-title">Wochenende 25. bis
+            29.11</h2>
+        <div class="day"><span class="day-title">Freitag</span>
+            <div class="shift"><span class="shift-title">10 bis 16 Uhr</span>
+                <div class="person-role">Griller</div>
+                <div class="person-name">Herbert Bretz</div>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+                <div class="person-role">Person 3</div>
+                <div class="person-name">Bernd Thomas</div>
+            </div>
+            <div class="shift"><span class="shift-title">13 bis 19 Uhr</span>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+            </div>
+            <div class="shift"><span class="shift-title">16 bis 22 Uhr</span>
+                <div class="person-role">Griller</div>
+                <div class="person-name">Herbert Bretz</div>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+                <div class="person-role">Person 3</div>
+                <div class="person-name">Bernd Thomas</div>
+            </div>
+        </div>
+        <div class="day"><span class="day-title">Samstag</span>
+            <div class="shift"><span class="shift-title">10 bis 16 Uhr</span>
+                <div class="person-role">Griller</div>
+                <div class="person-name">Herbert Bretz</div>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+                <div class="person-role">Person 3</div>
+                <div class="person-name">Bernd Thomas</div>
+            </div>
+            <div class="shift"><span class="shift-title">13 bis 19 Uhr</span>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+            </div>
+            <div class="shift"><span class="shift-title">16 bis 22 Uhr</span>
+                <div class="person-role">Griller</div>
+                <div class="person-name">Herbert Bretz</div>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+                <div class="person-role">Person 3</div>
+                <div class="person-name">Bernd Thomas</div>
+            </div>
+        </div>
+        <div class="day"><span class="day-title">Sonntag</span>
+            <div class="shift"><span class="shift-title">10 bis 16 Uhr</span>
+                <div class="person-role">Griller</div>
+                <div class="person-name">Herbert Bretz</div>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+                <div class="person-role">Person 3</div>
+                <div class="person-name">Bernd Thomas</div>
+            </div>
+            <div class="shift"><span class="shift-title">13 bis 19 Uhr</span>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+            </div>
+            <div class="shift"><span class="shift-title">16 bis 22 Uhr</span>
+                <div class="person-role">Griller</div>
+                <div class="person-name">Herbert Bretz</div>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+                <div class="person-role">Person 3</div>
+                <div class="person-name">Bernd Thomas</div>
+            </div>
+        </div>
+    </div>
+    <div class="weekend">
+        <h2 class="weekend-title">Wochenende 25. bis
+            29.11</h2>
+        <div class="day"><span class="day-title">Freitag</span>
+            <div class="shift"><span class="shift-title">10 bis 16 Uhr</span>
+                <div class="person-role">Griller</div>
+                <div class="person-name">Herbert Bretz</div>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+                <div class="person-role">Person 3</div>
+                <div class="person-name">Bernd Thomas</div>
+            </div>
+            <div class="shift"><span class="shift-title">13 bis 19 Uhr</span>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+            </div>
+            <div class="shift"><span class="shift-title">16 bis 22 Uhr</span>
+                <div class="person-role">Griller</div>
+                <div class="person-name">Herbert Bretz</div>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+                <div class="person-role">Person 3</div>
+                <div class="person-name">Bernd Thomas</div>
+            </div>
+        </div>
+        <div class="day"><span class="day-title">Samstag</span>
+            <div class="shift"><span class="shift-title">10 bis 16 Uhr</span>
+                <div class="person-role">Griller</div>
+                <div class="person-name">Herbert Bretz</div>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+                <div class="person-role">Person 3</div>
+                <div class="person-name">Bernd Thomas</div>
+            </div>
+            <div class="shift"><span class="shift-title">13 bis 19 Uhr</span>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+            </div>
+            <div class="shift"><span class="shift-title">16 bis 22 Uhr</span>
+                <div class="person-role">Griller</div>
+                <div class="person-name">Herbert Bretz</div>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+                <div class="person-role">Person 3</div>
+                <div class="person-name">Bernd Thomas</div>
+            </div>
+        </div>
+        <div class="day"><span class="day-title">Sonntag</span>
+            <div class="shift"><span class="shift-title">10 bis 16 Uhr</span>
+                <div class="person-role">Griller</div>
+                <div class="person-name">Herbert Bretz</div>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+                <div class="person-role">Person 3</div>
+                <div class="person-name">Bernd Thomas</div>
+            </div>
+            <div class="shift"><span class="shift-title">13 bis 19 Uhr</span>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+            </div>
+            <div class="shift"><span class="shift-title">16 bis 22 Uhr</span>
+                <div class="person-role">Griller</div>
+                <div class="person-name">Herbert Bretz</div>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+                <div class="person-role">Person 3</div>
+                <div class="person-name">Bernd Thomas</div>
+            </div>
+        </div>
+    </div>
+    <div class="weekend">
+        <h2 class="weekend-title">Wochenende 25. bis
+            29.11</h2>
+        <div class="day"><span class="day-title">Freitag</span>
+            <div class="shift"><span class="shift-title">10 bis 16 Uhr</span>
+                <div class="person-role">Griller</div>
+                <div class="person-name">Herbert Bretz</div>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+                <div class="person-role">Person 3</div>
+                <div class="person-name">Bernd Thomas</div>
+            </div>
+            <div class="shift"><span class="shift-title">13 bis 19 Uhr</span>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+            </div>
+            <div class="shift"><span class="shift-title">16 bis 22 Uhr</span>
+                <div class="person-role">Griller</div>
+                <div class="person-name">Herbert Bretz</div>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+                <div class="person-role">Person 3</div>
+                <div class="person-name">Bernd Thomas</div>
+            </div>
+        </div>
+        <div class="day"><span class="day-title">Samstag</span>
+            <div class="shift"><span class="shift-title">10 bis 16 Uhr</span>
+                <div class="person-role">Griller</div>
+                <div class="person-name">Herbert Bretz</div>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+                <div class="person-role">Person 3</div>
+                <div class="person-name">Bernd Thomas</div>
+            </div>
+            <div class="shift"><span class="shift-title">13 bis 19 Uhr</span>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+            </div>
+            <div class="shift"><span class="shift-title">16 bis 22 Uhr</span>
+                <div class="person-role">Griller</div>
+                <div class="person-name">Herbert Bretz</div>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+                <div class="person-role">Person 3</div>
+                <div class="person-name">Bernd Thomas</div>
+            </div>
+        </div>
+        <div class="day"><span class="day-title">Sonntag</span>
+            <div class="shift"><span class="shift-title">10 bis 16 Uhr</span>
+                <div class="person-role">Griller</div>
+                <div class="person-name">Herbert Bretz</div>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+                <div class="person-role">Person 3</div>
+                <div class="person-name">Bernd Thomas</div>
+            </div>
+            <div class="shift"><span class="shift-title">13 bis 19 Uhr</span>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+            </div>
+            <div class="shift"><span class="shift-title">16 bis 22 Uhr</span>
+                <div class="person-role">Griller</div>
+                <div class="person-name">Herbert Bretz</div>
+                <div class="person-role">Person 1</div>
+                <div class="person-name">Gerhard Bretz</div>
+                <div class="person-role">Person 2</div>
+                <div class="person-name">Manfred BÃ¤umler</div>
+                <div class="person-role">Person 3</div>
+                <div class="person-name">Bernd Thomas</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
+
