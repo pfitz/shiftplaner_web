@@ -1,21 +1,19 @@
 defmodule ShiftplanerWebWeb.EventController do
+  alias Shiftplaner.Event
   use ShiftplanerWebWeb, :controller
 
-  alias Shiftplaner.Event
-
-
   def index(conn, _params) do
-    events = Event.list_all_events()
+    events = Shiftplaner.list_all_events()
     render(conn, "index.html", events: events)
   end
 
   def new(conn, _params) do
-    changeset = Event.change_event(%Event{})
+    changeset = Shiftplaner.change_event(%Event{})
     render(conn, "new.html", changeset: changeset)
   end
 
   def create(conn, %{"event" => event_params}) do
-    case Event.create_event(event_params) do
+    case Shiftplaner.create_event(event_params) do
       {:ok, event} ->
         conn
         |> put_flash(:info, "Event created successfully.")
@@ -26,20 +24,20 @@ defmodule ShiftplanerWebWeb.EventController do
   end
 
   def show(conn, %{"id" => id}) do
-    event = Event.get_event(id)
+    event = Shiftplaner.get_event(id)
     render(conn, "show.html", event: event)
   end
 
   def edit(conn, %{"id" => id}) do
-    event = Event.get_event!(id)
-    changeset = Event.change_event(event)
+    event = Shiftplaner.get_event(id)
+    changeset = Shiftplaner.change_event(event)
     render(conn, "edit.html", event: event, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "event" => event_params}) do
-    event = Event.get_event!(id)
+    event = Shiftplaner.get_event(id)
 
-    case Event.update_event(event, event_params) do
+    case Shiftplaner.update_event(event, event_params) do
       {:ok, event} ->
         conn
         |> put_flash(:info, "Event updated successfully.")
@@ -50,8 +48,10 @@ defmodule ShiftplanerWebWeb.EventController do
   end
 
   def delete(conn, %{"id" => id}) do
-    event = Event.get_event(id)
-    {:ok, _event} = Event.delete_event(event)
+    {:ok, _event} =
+      id
+      |> Shiftplaner.get_event()
+      |> Shiftplaner.delete_event()
 
     conn
     |> put_flash(:info, "Event deleted successfully.")
