@@ -1,8 +1,12 @@
-<h2>Show Weekend</h2>
+<h2>Wochenende: <%= @weekend.name %></h2>
 
+<span>Tage:</span>
 <ul>
+    <%= for day <- @weekend.days do %>
+     <li><%= day.date %></li>
+    <% end %>
 
 </ul>
 
-<span><%= link "Edit", to: event_weekend_path(@conn, :edit, @event) %></span>
-<span><%= link "Back", to: event_weekend_path(@conn, :index, @event) %></span>
+<span><%= link "Wochenende bearbeiten", to: event_weekend_path(@conn, :edit, @event.id, @weekend.id), class: "btn btn-default" %></span>
+<span><%= link "Züruck zur Wochenendenliste", to: event_weekend_path(@conn, :index, @event.id), class: "btn btn-default pull-right" %></span>

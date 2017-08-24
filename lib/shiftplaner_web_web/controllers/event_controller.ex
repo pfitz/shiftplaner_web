@@ -24,7 +24,7 @@ defmodule ShiftplanerWebWeb.EventController do
   end
 
   def show(conn, %{"id" => id}) do
-    event = Shiftplaner.get_event(id)
+    {:ok, event} = Shiftplaner.get_event(id)
     render(conn, "show.html", event: event)
   end
 

@@ -4,56 +4,62 @@ defmodule ShiftplanerWebWeb.WeekendController do
   alias Shiftplaner.{Event, Weekend}
 
   def index(conn, %{"event_id" => event_id}) do
+    {:ok, event} = Shiftplaner.get_event(event_id)
     weekends = Shiftplaner.list_weekends_for_event(event_id)
-    render(conn, "index.html", weekends: weekends, event_id: event_id)
+    render(conn, "index.html", weekends: weekends, event: event)
   end
 
-  def new(conn, _params) do
+  def new(conn, %{"event_id" => event_id}) do
+    {:ok, event} = Shiftplaner.get_event(event_id)
     changeset = Shiftplaner.change_weekend(%Weekend{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", changeset: changeset, event: event)
   end
 
-  def create(conn, %{"weekend" => weekend_params}) do
-    case Shiftplaner.create_weekend(weekend_params) do
+  def create(conn, %{"event_id" => event_id, "weekend" => weekend_params}) do
+
+    case Shiftplaner.create_weekend_for_event(weekend_params, event_id) do
       {:ok, weekend} ->
         conn
         |> put_flash(:info, "Weekend created successfully.")
-        |> redirect(to: event_weekend_path(conn, :show, weekend))
+        |> redirect(to: event_weekend_path(conn, :show, event_id, weekend))
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        event = Shiftplaner.get_event(event_id)
+        render(conn, "new.html", changeset: changeset, event: event)
     end
   end
 
-  def show(conn, %{"id" => id}) do
+  def show(conn, %{"event_id" => event_id, "id" => id}) do
+    event = Shiftplaner.get_event!(event_id)
     weekend = Shiftplaner.get_weekend!(id)
-    render(conn, "show.html", weekend: weekend)
+    render(conn, "show.html", weekend: weekend, event: event)
   end
 
-  def edit(conn, %{"id" => id}) do
+  def edit(conn, %{"event_id" => event_id, "id" => id}) do
     weekend = Shiftplaner.get_weekend!(id)
+    event = Shiftplaner.get_event!(event_id)
     changeset = Shiftplaner.change_weekend(weekend)
-    render(conn, "edit.html", weekend: weekend, changeset: changeset)
+    render(conn, "edit.html", weekend: weekend, changeset: changeset, event: event)
   end
 
-  def update(conn, %{"id" => id, "weekend" => weekend_params}) do
+  def update(conn, %{"event_id" => event_id, "id" => id, "weekend" => weekend_params}) do
     weekend = Shiftplaner.get_weekend!(id)
 
     case Shiftplaner.update_weekend(weekend, weekend_params) do
       {:ok, weekend} ->
         conn
         |> put_flash(:info, "Weekend updated successfully.")
-        |> redirect(to: event_weekend_path(conn, :show, weekend))
+        |> redirect(to: event_weekend_path(conn, :show, event_id, weekend.id))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", weekend: weekend, changeset: changeset)
     end
   end
 
-  def delete(conn, %{"id" => id}) do
+  def delete(conn, %{"event_id" => event_id, "id" => id}) do
     weekend = Shiftplaner.get_weekend!(id)
     {:ok, _weekend} = Shiftplaner.delete_weekend(weekend)
 
     conn
     |> put_flash(:info, "Weekend deleted successfully.")
-    |> redirect(to: event_weekend_path(conn, :index, weekend))
+    |> redirect(to: event_weekend_path(conn, :index, event_id))
   end
 end

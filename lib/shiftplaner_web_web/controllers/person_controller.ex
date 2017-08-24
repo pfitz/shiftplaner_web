@@ -1,11 +1,10 @@
 defmodule ShiftplanerWebWeb.PersonController do
   @moduledoc false
 
-  alias Shiftplaner.Person
   use ShiftplanerWebWeb, :controller
 
   def index(conn, _params) do
-    persons = Person.list_persons()
+    persons = Shiftplaner.list_persons()
     render conn, "index.html", persons: persons
   end
 

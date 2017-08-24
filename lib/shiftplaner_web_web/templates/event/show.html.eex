@@ -14,5 +14,16 @@
 
 </ul>
 
-<span><%= link "Edit", to: event_path(@conn, :edit, @event) %></span>
+<span><%= link "Edit", to: event_path(@conn, :edit, @event.id) %></span>
 <span><%= link "Back", to: event_path(@conn, :index) %></span>
+
+<h2>Weekends for Event</h2>
+<ul>
+  <%= for weekend <- @event.weekends do %>
+  <li> <%= link "test", to: event_weekend_path(@conn, :index, @event.id) %></li>
+  <% end %>
+</ul>
+
+<span> <%= link "Erstelle Wochenende für Event", to: event_weekend_path(@conn, :create, @event.id) %></span>
+
+

@@ -12,6 +12,10 @@ defmodule ShiftplanerWebWeb.WeekendView do
     date_to_string(to)
   end
 
+  defp date_to_string(:no_days) do
+    "-"
+  end
+
   defp date_to_string(date) do
     {y,m,d} = Date.to_erl(date)
     "#{d}.#{m}.#{y}"
