@@ -1,7 +1,7 @@
 defmodule ShiftplanerWebWeb.WeekendController do
   use ShiftplanerWebWeb, :controller
 
-  alias Shiftplaner.{Event, Weekend}
+  alias Shiftplaner.Weekend
 
   def index(conn, %{"event_id" => event_id}) do
     {:ok, event} = Shiftplaner.get_event(event_id)

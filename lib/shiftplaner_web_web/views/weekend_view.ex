@@ -1,6 +1,6 @@
 defmodule ShiftplanerWebWeb.WeekendView do
   use ShiftplanerWebWeb, :view
-  alias Shiftplaner.{Day, Weekend}
+  alias Shiftplaner.Weekend
 
   def weekend_from(%Weekend{} = weekend) do
     {from, _} = Weekend.first_and_last_day_of_weekend(weekend)

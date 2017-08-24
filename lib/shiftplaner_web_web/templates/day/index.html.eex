@@ -1,4 +1,4 @@
-<h2>Listing Days</h2>
+<h2>Liste aller Tage für das Wochenende: <%= @weekend.name %></h2>
 
 <table class="table">
   <thead>
@@ -14,13 +14,14 @@
       <td><%= day.date %></td>
 
       <td class="text-right">
-        <span><%= link "Show", to: event_weekend_day_path(@conn, :show, @event_id, @weekend_id, day), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: event_weekend_day_path(@conn, :edit, @event_id, @weekend_id, day), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: event_weekend_day_path(@conn, :delete, @event_id, @weekend_id, day), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        <span><%= link "Show", to: event_weekend_day_path(@conn, :show, @event_id, @weekend.id, day), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: event_weekend_day_path(@conn, :edit, @event_id, @weekend.id, day), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: event_weekend_day_path(@conn, :delete, @event_id, @weekend.id, day), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Day", to: event_weekend_day_path(@conn, :new, @event_id, @weekend_id) %></span>
+<span><%= link "Neuen Tag zum Wochenende hinzufügen", to: event_weekend_day_path(@conn, :new, @event_id, @weekend.id), class: "btn btn-default" %></span>
+<span><%= link "Züruck zur Wochenendliste", to: event_weekend_path(@conn, :index, @event_id), class: "btn btn-default pull-right" %></span>

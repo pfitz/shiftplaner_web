@@ -1,20 +1,22 @@
 defmodule ShiftplanerWebWeb.DayController do
   use ShiftplanerWebWeb, :controller
 
-  alias Shiftplaner.{Day, Weekend}
+  alias Shiftplaner.Day
 
   def index(conn, %{"event_id" => e_id, "weekend_id" => w_id}) do
-    days = Day.list_days()
-    render(conn, "index.html", days: days, event_id: e_id, weekend_id: w_id)
+    we = Shiftplaner.get_weekend!(w_id)
+    days = Shiftplaner.list_days()
+    render(conn, "index.html", days: days, event_id: e_id, weekend: we)
   end
 
-  def new(conn, _params) do
-    changeset = Day.change_day(%Day{})
-    render(conn, "new.html", changeset: changeset)
+  def new(conn, %{"event_id" => e_id, "weekend_id" => w_id}) do
+    changeset = Shiftplaner.change_day(%Day{})
+    render(conn, "new.html", changeset: changeset, event_id: e_id, weekend_id: w_id)
   end
 
   def create(conn, %{"event_id" => e_id, "weekend_id" => w_id, "day" => day_params}) do
-    case Day.create_day(day_params) do
+    day_params = Map.put(day_params, "weekend_id", w_id)
+    case Shiftplaner.create_day(day_params) do
       {:ok, day} ->
         conn
         |> put_flash(:info, "Day created successfully.")
@@ -24,21 +26,21 @@ defmodule ShiftplanerWebWeb.DayController do
     end
   end
 
-  def show(conn, %{"id" => id}) do
-    day = Day.get_day!(id)
-    render(conn, "show.html", day: day)
+  def show(conn, %{"event_id" => e_id, "weekend_id" => w_id, "id" => id}) do
+    day = Shiftplaner.get_day!(id)
+    render(conn, "show.html", day: day, event_id: e_id, weekend_id: w_id)
   end
 
-  def edit(conn, %{"id" => id}) do
-    day = Day.get_day!(id)
-    changeset = Day.change_day(day)
-    render(conn, "edit.html", day: day, changeset: changeset)
+  def edit(conn, %{"event_id" => e_id, "weekend_id" => w_id, "id" => id}) do
+    day = Shiftplaner.get_day!(id)
+    changeset = Shiftplaner.change_day(day)
+    render(conn, "edit.html", day: day, changeset: changeset, event_id: e_id, weekend_id: w_id)
   end
 
   def update(conn, %{"event_id" => e_id, "weekend_id" => w_id, "id" => id, "day" => day_params}) do
-    day = Day.get_day!(id)
+    day = Shiftplaner.get_day!(id)
 
-    case Day.update_day(day, day_params) do
+    case Shiftplaner.update_day(day, day_params) do
       {:ok, day} ->
         conn
         |> put_flash(:info, "Day updated successfully.")
@@ -49,8 +51,8 @@ defmodule ShiftplanerWebWeb.DayController do
   end
 
   def delete(conn, %{"event_id" => e_id, "weekend_id" => w_id, "id" => id}) do
-    day = Day.get_day!(id)
-    {:ok, _day} = Day.delete_day(day)
+    day = Shiftplaner.get_day!(id)
+    {:ok, _day} = Shiftplaner.delete_day(day)
 
     conn
     |> put_flash(:info, "Day deleted successfully.")
