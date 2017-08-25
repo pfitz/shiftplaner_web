@@ -1,0 +1,32 @@
+<h2>Listing Shifts</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Worker needed</th>
+      <th>Griller needed</th>
+      <th>Start time</th>
+      <th>End time</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for shift <- @shifts do %>
+    <tr>
+      <td><%= shift.worker_needed %></td>
+      <td><%= shift.griller_needed %></td>
+      <td><%= shift.start_time %></td>
+      <td><%= shift.end_time %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: event_weekend_day_shift_path(@conn, :show, @event_id, @weekend_id, @day_id, shift), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: event_weekend_day_shift_path(@conn, :edit, @event_id, @weekend_id, @day_id, shift), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: event_weekend_day_shift_path(@conn, :delete, @event_id, @weekend_id, @day_id, shift), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Shift", to: event_weekend_day_shift_path(@conn, :new, @event_id, @weekend_id, @day_id) %></span>

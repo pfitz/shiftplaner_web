@@ -1,0 +1,5 @@
+<h2>New Shift</h2>
+
+<%= render "form.html", Map.put(assigns, :action, event_weekend_day_shift_path(@conn, :create, @event_id, @weekend_id, @day_id)) %>
+
+<span><%= link "Back", to: event_weekend_day_shift_path(@conn, :index, @event_id, @weekend_id, @day_id) %></span>

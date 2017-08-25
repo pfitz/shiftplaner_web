@@ -1,0 +1,28 @@
+<h2>Show Shift</h2>
+
+<ul>
+
+  <li>
+    <strong>Worker needed:</strong>
+    <%= @shift.worker_needed %>
+  </li>
+
+  <li>
+    <strong>Griller needed:</strong>
+    <%= @shift.griller_needed %>
+  </li>
+
+  <li>
+    <strong>Start time:</strong>
+    <%= @shift.start_time %>
+  </li>
+
+  <li>
+    <strong>End time:</strong>
+    <%= @shift.end_time %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: event_weekend_day_shift_path(@conn, :edit, @event_id, @weekend_id, @day_id, @shift) %></span>
+<span><%= link "Back", to: event_weekend_day_shift_path(@conn, :index, @event_id, @weekend_id, @day_id) %></span>

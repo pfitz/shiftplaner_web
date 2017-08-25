@@ -15,6 +15,7 @@
 
       <td class="text-right">
         <span><%= link "Show", to: event_weekend_day_path(@conn, :show, @event_id, @weekend.id, day), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Show shifts", to: event_weekend_day_shift_path(@conn, :index, @event_id, @weekend.id, day), class: "btn btn-default btn-xs" %></span>
         <span><%= link "Edit", to: event_weekend_day_path(@conn, :edit, @event_id, @weekend.id, day), class: "btn btn-default btn-xs" %></span>
         <span><%= link "Delete", to: event_weekend_day_path(@conn, :delete, @event_id, @weekend.id, day), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
       </td>

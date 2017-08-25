@@ -29,7 +29,9 @@ defmodule ShiftplanerWebWeb.Router do
 
     resources "/events", EventController do
       resources "/weekends", WeekendController do
-        resources "/days", DayController
+        resources "/days", DayController do
+          resources "/shifts", ShiftController
+        end
       end
     end
 
