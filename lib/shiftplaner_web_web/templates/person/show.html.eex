@@ -1,0 +1,33 @@
+<h2>Show Person</h2>
+
+<ul>
+
+  <li>
+    <strong>First name:</strong>
+    <%= @person.first_name %>
+  </li>
+
+  <li>
+    <strong>Sure name:</strong>
+    <%= @person.sure_name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @person.email %>
+  </li>
+
+  <li>
+    <strong>Phone:</strong>
+    <%= @person.phone %>
+  </li>
+
+  <li>
+    <strong>Is griller:</strong>
+    <%= @person.is_griller %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: person_path(@conn, :edit, @person) %></span>
+<span><%= link "Back", to: person_path(@conn, :index) %></span>

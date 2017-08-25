@@ -35,13 +35,7 @@ defmodule ShiftplanerWebWeb.Router do
       end
     end
 
-
-    scope "/person" do
-      get "/", PersonController, :index
-      get "/new", PersonController, :create
-      put "/edit/:id", PersonController, :edit
-      delete "/delete/:id", PersonController, :delete
-    end
+    resources "/persons", PersonController
   end
   # Other scopes may use custom stacks.
   # scope "/api", ShiftplanerWebWeb do
