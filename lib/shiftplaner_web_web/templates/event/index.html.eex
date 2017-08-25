@@ -1,4 +1,4 @@
-<h2>Listing Events</h2>
+<h2>Liste aller Events</h2>
 
 <table class="table">
   <thead>
@@ -17,6 +17,7 @@
 
       <td class="text-right">
         <span><%= link "Show", to: event_path(@conn, :show, event), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "List Weekends", to: event_weekend_path(@conn, :index, event), class: "btn btn-default btn-xs" %></span>
         <span><%= link "Edit", to: event_path(@conn, :edit, event), class: "btn btn-default btn-xs" %></span>
         <span><%= link "Delete", to: event_path(@conn, :delete, event), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
       </td>

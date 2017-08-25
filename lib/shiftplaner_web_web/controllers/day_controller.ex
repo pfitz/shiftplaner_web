@@ -5,7 +5,7 @@ defmodule ShiftplanerWebWeb.DayController do
 
   def index(conn, %{"event_id" => e_id, "weekend_id" => w_id}) do
     we = Shiftplaner.get_weekend!(w_id)
-    days = Shiftplaner.list_days()
+    days = Shiftplaner.list_days_for_weekend(w_id)
     render(conn, "index.html", days: days, event_id: e_id, weekend: we)
   end
 
