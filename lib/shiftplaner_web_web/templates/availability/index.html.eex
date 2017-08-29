@@ -1,0 +1,28 @@
+<h2>Liste aller Verfügbarer Personen</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Vorname</th>
+      <th>Nachname</th>
+      <th>ist Griller?</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for person <- @persons do %>
+    <tr>
+      <td><%= person.first_name %></td>
+      <td><%= person.sure_name %></td>
+      <td><%= person.is_griller %></td>
+
+      <td class="text-right">
+        <span><%= link "Verfügbarkeiten anzeigen", to: availability_path(@conn, :show, person.id), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Verfügbarkeiten ändern", to: availability_path(@conn, :edit, person.id), class: "btn btn-default btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+

@@ -1,0 +1,6 @@
+<div class="weekend">
+    <h2 class="weekend-title"><%= weekend_description(@weekend) %></h2>
+    <%= for day <- @weekend.days do %>
+        <%= render "day.html", day: day, f: @f, person_id: @person_id %>
+    <% end %>
+</div>

@@ -1,0 +1,25 @@
+<h2>Verfügbarkeiten von <%= @person.first_name %> <%= @person.sure_name %></h2>
+
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Datum</th>
+    <th>Startzeit</th>
+    <th>Endzeit</th>
+
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= for shift <- @shifts do %>
+  <tr>
+    <td><%= shift.day.date %></td>
+    <td><%= shift.start_time %></td>
+    <td><%= shift.end_time %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<span><%= link "Back", to: availability_path(@conn, :index) %></span>

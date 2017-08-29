@@ -96,6 +96,53 @@ h2 {
         @include span(8 of 12 last);
         padding-left: 10px;
       }
+
+      /*.chkbox {
+
+        input[type=checkbox] {
+          visibility: hidden;
+        }
+
+        width: 25px;
+        margin: 20px 100px;
+        position: relative;
+
+        label {
+          cursor: pointer;
+          position: absolute;
+          width: 25px;
+          height: 25px;
+          top: 0;
+          left:0;
+          background: #eee;
+          border: 1px solid #ddd;
+
+          &:after {
+            opacity: 0.2;
+            content: '';
+            position: absolute;
+            width: 9px;
+            height: 5px;
+            background: transparent;
+            top: 6px;
+            left: 7px;
+            border: 3px solid #333;
+            border-top: none;
+            border-right: none;
+
+            transform: rotate(-45deg);
+          }
+
+          &:hover::after{
+            opacity: 0;
+          }
+        }
+
+        input[type=checkbox]:checked + label:after {
+          opacity: 1;
+        }
+
+      }*/
     }
   }
 }

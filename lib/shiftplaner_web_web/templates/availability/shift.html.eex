@@ -1,0 +1,6 @@
+<div class="shift"><span class="shift-title"><%= shift_times(@shift) %></span>
+    <div class="form-group chkbox">
+        <%= checkbox @f, String.to_atom(@shift.id), class: "form-control chkbox", checked: person_is_available_for_shift?(@person_id, @shift) %>
+        <%= label @f, String.to_atom(@shift.id), "" %>
+    </div>
+</div>

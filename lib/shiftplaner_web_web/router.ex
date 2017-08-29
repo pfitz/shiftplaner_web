@@ -35,6 +35,12 @@ defmodule ShiftplanerWebWeb.Router do
       end
     end
 
+    get "/availability", AvailabilityController, :index
+    get "/availability/:id/edit", AvailabilityController, :edit
+    get "/availability/:id", AvailabilityController, :show
+    patch "/availability/:id", AvailabilityController, :update
+    put "/availability/:id", AvailabilityController, :update
+    post "/availability/:id", AvailabilityController, :update
     resources "/persons", PersonController
   end
   # Other scopes may use custom stacks.
