@@ -1,0 +1,20 @@
+<div class="day"><span class="day-title"><%= "#{day_of_week(@day)} - #{@day.date}" %></span>
+    <%= form_for @conn, disposition_path(@conn, :update, @event_id, @weekend_id, @day.id, @shift.id), [as: :dispo_shift], fn f -> %>
+        <%= for shift <- [@shift] do %>
+        <div class="shift"><span class="shift-title"><%= shift_times(@shift) %></span>
+            <%= if @shift.griller_needed > 0 do %>
+                <%= for i <- 1..@shift.griller_needed do %>
+                    <div class="person-role">Griller</div>
+                    <div class="person-name"><%= select_available_griller(f, i, @shift) %></div>
+                <% end %>
+            <% end %>
+            <%= if @shift.worker_needed > 0 do %>
+                <%= for i <- 1..@shift.worker_needed do %>
+                    <div class="person-role">Person <%= i %></div>
+                    <div class="person-name"><%= select_available_worker(f, i, @shift) %></div>
+                <% end %>
+            <% end %>
+        </div>
+        <% end %>
+    <% end %>
+</div>

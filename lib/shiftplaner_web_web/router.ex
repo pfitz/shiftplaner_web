@@ -42,6 +42,14 @@ defmodule ShiftplanerWebWeb.Router do
     put "/availability/:id", AvailabilityController, :update
     post "/availability/:id", AvailabilityController, :update
     resources "/persons", PersonController
+
+    get "/dispositon", DispositionController, :event_index
+    get "/disposition/:event_id", DispositionController, :weekend_index
+    get "/disposition/:event_id/:weekend_id", DispositionController, :day_index
+    get "/disposition/:event_id/:weekend_id/:day_id", DispositionController, :shift_index
+    get "/disposition/:event_id/:weekend_id/:day_id/:shift_id", DispositionController, :edit
+    post "/disposition/:event_id/:weekend_id/:day_id/:shift_id", DispositionController, :update
+
   end
   # Other scopes may use custom stacks.
   # scope "/api", ShiftplanerWebWeb do

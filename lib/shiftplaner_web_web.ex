@@ -40,6 +40,7 @@ defmodule ShiftplanerWebWeb do
       import ShiftplanerWebWeb.Router.Helpers
       import ShiftplanerWebWeb.ErrorHelpers
       import ShiftplanerWebWeb.Gettext
+      import ShiftplanerWebWeb.ViewHelpers
     end
   end
 

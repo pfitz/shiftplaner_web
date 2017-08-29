@@ -41,6 +41,7 @@
 
             <ul class="nav navbar-nav">
               <li> <%= link "Verfügbarkeiten", to: availability_path(@conn, :index) %></li>
+              <li> <%= link "Disposition", to: disposition_path(@conn, :event_index) %></li>
               <li> <%= link "Personen", to: person_path(@conn, :index) %> </li>
               <li><%= link "Events", to: event_path(@conn, :index) %></li>
 

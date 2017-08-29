@@ -1,0 +1,25 @@
+<h2>Liste aller Tage für das Wochenende: <%= @weekend.name %></h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Date</th>
+
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <%= for day <- @days do %>
+    <tr>
+        <td><%= day.date %></td>
+
+        <td class="text-right">
+            <span><%= link "Show shifts", to: disposition_path(@conn, :shift_index, @event_id, @weekend.id, day.id), class: "btn btn-default btn-xs" %></span>
+        </td>
+    </tr>
+    <% end %>
+    </tbody>
+</table>
+
+
+<span><%= link "Züruck zur Wochenendliste", to: disposition_path(@conn, :weekend_index, @event_id), class: "btn btn-default pull-right" %></span>

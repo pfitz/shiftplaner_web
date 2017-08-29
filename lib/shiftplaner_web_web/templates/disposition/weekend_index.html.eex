@@ -1,0 +1,28 @@
+<h2>Liste aller Wochenenden für Event: <%= @event.name %></h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>von</th>
+        <th>bis</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%= for weekend <- @weekends do %>
+    <tr>
+        <td><%= weekend.name %></td>
+        <td><%= weekend_from(weekend) %></td>
+        <td><%= weekend_to(weekend) %></td>
+        <td class="text-right">
+            <span><%= link "Tage anzeigen", to: disposition_path(@conn, :day_index, @event.id, weekend.id), class: "btn btn-default btn-xs" %></span>
+        </td>
+    </tr>
+    <% end %>
+    </tbody>
+</table>
+
+
+<span>
+    <%= link "Zurück zum Event: " <> @event.name, to: disposition_path(@conn, :event_index), class: "btn btn-default pull-right" %>
+</span>

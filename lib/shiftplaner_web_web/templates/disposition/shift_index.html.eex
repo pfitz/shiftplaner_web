@@ -1,0 +1,29 @@
+<h2>Listing Shifts</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Worker needed</th>
+        <th>Griller needed</th>
+        <th>Start time</th>
+        <th>End time</th>
+
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <%= for shift <- @shifts do %>
+    <tr>
+        <td><%= shift.worker_needed %></td>
+        <td><%= shift.griller_needed %></td>
+        <td><%= shift.start_time %></td>
+        <td><%= shift.end_time %></td>
+
+        <td class="text-right">
+            <span><%= link "Disposition Worker", to: disposition_path(@conn, :edit, @event_id, @weekend_id, @day.id, shift), class: "btn btn-default btn-xs" %></span>
+        </td>
+    </tr>
+    <% end %>
+    </tbody>
+</table>
+

@@ -1,0 +1,20 @@
+<h2>Liste aller Events</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Event Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%= for event <- @events do %>
+    <tr>
+        <td><%= event.name %></td>
+
+        <td class="text-right">
+            <span><%= link "Wochenenden anzeigen", to: disposition_path(@conn, :weekend_index, event.id), class: "btn btn-default btn-xs" %></span>
+        </td>
+    </tr>
+    <% end %>
+    </tbody>
+</table>
