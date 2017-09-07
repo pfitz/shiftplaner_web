@@ -1,6 +1,6 @@
 defmodule ShiftplanerWebWeb.DispositionController do
   @moduledoc false
-  
+
   use ShiftplanerWebWeb, :controller
 
   def event_index(conn, _params) do
@@ -29,6 +29,45 @@ defmodule ShiftplanerWebWeb.DispositionController do
   def edit(conn, %{"event_id" => id, "weekend_id" => w_id, "day_id" => d_id, "shift_id" => s_id}) do
     shift = Shiftplaner.get_shift!(s_id)
     day = Shiftplaner.get_day!(d_id)
-    render(conn, "shift_edit.html",  event_id: id, weekend_id: w_id, day: day, shift: shift)
+    render(conn, "shift_edit.html", event_id: id, weekend_id: w_id, day: day, shift: shift)
+  end
+
+  def update(
+        conn,
+        %{
+          "event_id" => id,
+          "weekend_id" => w_id,
+          "day_id" => d_id,
+          "shift_id" => s_id,
+          "dispo_shift" => disposition
+        }
+      ) do
+    %{griller: griller, worker: worker} = get_griller_and_worker_from_disposition(disposition)
+
+    Shiftplaner.disposition_workers_to_shift(s_id, worker)
+    Shiftplaner.disposition_grillers_to_shift(s_id, griller)
+
+    day = Shiftplaner.get_day!(d_id)
+    shift = Shiftplaner.get_shift!(s_id)
+    conn
+    |> render("shift_edit.html", event_id: id, weekend_id: w_id, day: day, shift: shift)
+  end
+
+  defp get_griller_and_worker_from_disposition(dispositon) when is_map(dispositon) do
+    keys = Map.keys(dispositon)
+    griller_keys = Enum.filter(keys, fn key -> String.starts_with?(key, "griller_") end)
+    worker_keys = Enum.filter(keys, fn key -> String.starts_with?(key, "worker_") end)
+
+    griller = get_relevant_values_for_keys(dispositon, griller_keys)
+    worker = get_relevant_values_for_keys(dispositon, worker_keys)
+
+    %{griller: griller, worker: worker}
+  end
+
+  defp get_relevant_values_for_keys(map, list_of_keys) when is_map(map) and is_list(list_of_keys) do
+    list_of_keys
+    |> Enum.map(&Map.get(map, &1))
+    |> Enum.filter(fn id -> String.length(id) > 0 end)
+    |> Enum.uniq()
   end
 end
