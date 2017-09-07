@@ -80,10 +80,14 @@ h2 {
     padding-bottom: 5px;
     //background-color: grey;
 
-    .day-title {
-      //width: span(12 of 12);
-      padding-left: gutters(1/4);
+    span.day-title {
+      width: 100%;
+      //padding-left: gutters(1/4);
       text-align: center;
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+      font-size: 120%;
     }
 
     .shift {
@@ -97,16 +101,13 @@ h2 {
         border-bottom: 2px double black;
         padding-top: 0.5em;
         padding-bottom: 0.5em;
+        margin-bottom: 0.2em;
       }
       .person-role {
         @include span(4 of 12);
         border-right: 2px dotted darkgrey;
         padding-bottom: 0.1em;
         padding-top: 0.1em;
-
-        &:first-child {
-          padding-top: 0.2em;
-        }
       }
 
       .person-name {
@@ -114,58 +115,7 @@ h2 {
         padding-left: 10px;
         padding-bottom: 0.1em;
         padding-top: 0.1em;
-
-        &:first-child {
-          padding-top: 0.2em;
-        }
       }
-
-      /*.chkbox {
-
-        input[type=checkbox] {
-          visibility: hidden;
-        }
-
-        width: 25px;
-        margin: 20px 100px;
-        position: relative;
-
-        label {
-          cursor: pointer;
-          position: absolute;
-          width: 25px;
-          height: 25px;
-          top: 0;
-          left:0;
-          background: #eee;
-          border: 1px solid #ddd;
-
-          &:after {
-            opacity: 0.2;
-            content: '';
-            position: absolute;
-            width: 9px;
-            height: 5px;
-            background: transparent;
-            top: 6px;
-            left: 7px;
-            border: 3px solid #333;
-            border-top: none;
-            border-right: none;
-
-            transform: rotate(-45deg);
-          }
-
-          &:hover::after{
-            opacity: 0;
-          }
-        }
-
-        input[type=checkbox]:checked + label:after {
-          opacity: 1;
-        }
-
-      }*/
     }
   }
 }
