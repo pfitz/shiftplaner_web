@@ -6,18 +6,20 @@
   <% end %>
 
   <div class="form-group">
-    <%= label f, :name, class: "control-label" %>
+    <%= label f, :name, "Eventname", class: "control-label" %>
     <%= text_input f, :name, class: "form-control" %>
     <%= error_tag f, :name %>
   </div>
 
   <div class="form-group">
-    <%= label f, :active, class: "control-label" %>
+    <%= label f, :active,"Event ist aktiv?", class: "control-label" %>
     <%= checkbox f, :active, class: "checkbox" %>
     <%= error_tag f, :active %>
   </div>
 
   <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
+    <%= submit class: "btn btn-primary pull-right" do %>
+    <i class="fa fa-user" aria-hidden="true"></i> Speichern
+    <% end %>
   </div>
 <% end %>

@@ -15,10 +15,26 @@
         <td><%= weekend_from(weekend) %></td>
         <td><%= weekend_to(weekend) %></td>
         <td class="text-right">
-            <span><%= link "Show", to: event_weekend_path(@conn, :show, @event.id, weekend), class: "btn btn-default btn-xs" %></span>
-            <span><%= link "List days", to: event_weekend_day_path(@conn, :index, @event.id, weekend), class: "btn-default btn btn-xs" %></span>
-            <span><%= link "Edit", to: event_weekend_path(@conn, :edit, @event.id, weekend), class: "btn btn-default btn-xs" %></span>
-            <span><%= link "Delete", to: event_weekend_path(@conn, :delete, @event.id, weekend), method: :delete, data: [confirm: "Wochenende wirklich löschen?"], class: "btn btn-danger btn-xs" %></span>
+            <span>
+          <%= link to: event_weekend_path(@conn, :show, @event.id, weekend), class: "btn btn-default btn-xs" do %>
+            <i class="fa fa-eye" aria-hidden="true"></i> Show
+          <% end %>
+        </span>
+            <span>
+          <%= link to: event_weekend_day_path(@conn, :index, @event.id, weekend), class: "btn btn-default btn-xs" do %>
+            <i class="fa fa-list" aria-hidden="true"></i> List Days
+          <% end %>
+        </span>
+            <span>
+          <%= link to: event_weekend_path(@conn, :edit, @event.id, weekend), class: "btn btn-default btn-xs" do %>
+            <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+          <% end %>
+        </span>
+            <span>
+          <%= link to: event_weekend_path(@conn, :delete, @event.id, weekend), method: :delete, data: [confirm: "Möchten sie das Wochenende #{weekend.name} wirklich löschen?"], class: "btn btn-danger btn-xs" do %>
+            <i class="fa fa-trash" aria-hidden="true"></i> Delete
+          <% end %>
+        </span>
         </td>
     </tr>
     <% end %>
@@ -27,8 +43,12 @@
 
 
 <span>
-    <%= link "Neues Wochenende hinzufügen", to: event_weekend_path(@conn, :new, @event.id), class: "btn btn-default" %>
+    <%= link to: event_weekend_path(@conn, :new, @event.id), class: "btn btn-default pull-right" do %>
+    <i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Neues Wochenende hinzufügen
+    <% end %>
 </span>
 <span>
-    <%= link "Zurück zum Event: " <> @event.name, to: event_path(@conn, :show, @event.id), class: "btn btn-default pull-right" %>
+    <%= link to: event_path(@conn, :index), class: "btn btn-default" do %>
+    <i class="fa fa-step-backward" aria-hidden="true"> </i> Zurück zum Event: <%= @event.name %>
+    <% end %>
 </span>

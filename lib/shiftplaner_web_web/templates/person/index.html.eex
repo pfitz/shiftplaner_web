@@ -1,13 +1,13 @@
-<h2>Listing Persons</h2>
+<h2>Personenliste</h2>
 
 <table class="table">
   <thead>
     <tr>
-      <th>First name</th>
-      <th>Sure name</th>
+      <th>Vorname</th>
+      <th>Nachnahme</th>
       <th>Email</th>
-      <th>Phone</th>
-      <th>Is griller</th>
+      <th>Telefon</th>
+      <th>Griller?</th>
       <th>Verfügbarkeit</th>
 
       <th></th>
@@ -24,13 +24,29 @@
       <td title="Verfübare Schichten / Disponierte Schichten"><%= availabiltiy(person) %></td>
 
       <td class="text-right">
-        <span><%= link "Show", to: person_path(@conn, :show, person), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: person_path(@conn, :edit, person), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: person_path(@conn, :delete, person), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        <span>
+          <%= link to: person_path(@conn, :show, person), class: "btn btn-default btn-xs" do %>
+            <i class="fa fa-eye" aria-hidden="true"></i> Show
+          <% end %>
+        </span>
+        <span>
+          <%= link to: person_path(@conn, :edit, person), class: "btn btn-default btn-xs" do %>
+            <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+          <% end %>
+        </span>
+        <span>
+          <%= link to: person_path(@conn, :delete, person), method: :delete, data: [confirm: "Möchten sie #{person.first_name} #{person.sure_name} wirklich löschen?"], class: "btn btn-danger btn-xs" do %>
+            <i class="fa fa-trash" aria-hidden="true"></i> Delete
+          <% end %>
+        </span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Person", to: person_path(@conn, :new) %></span>
+<span>
+  <%= link to: person_path(@conn, :new), class: "btn btn-default" do %>
+    <i class="fa fa-user-plus" aria-hidden="true"></i> Person hinzufügen
+  <% end %>
+</span>

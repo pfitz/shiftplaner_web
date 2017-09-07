@@ -29,7 +29,7 @@ defmodule ShiftplanerWebWeb.EventController do
   end
 
   def edit(conn, %{"id" => id}) do
-    event = Shiftplaner.get_event(id)
+    event = Shiftplaner.get_event!(id)
     changeset = Shiftplaner.change_event(event)
     render(conn, "edit.html", event: event, changeset: changeset)
   end

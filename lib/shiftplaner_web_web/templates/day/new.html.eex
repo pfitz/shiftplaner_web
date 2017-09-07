@@ -1,5 +1,9 @@
-<h2>New Day</h2>
+<h2>Neuen Tag zum Wochenende hinzufügen</h2>
 
 <%= render "form.html", Map.put(assigns, :action, event_weekend_day_path(@conn, :create, @event_id, @weekend_id)) %>
 
-<span><%= link "Back", to: event_weekend_day_path(@conn, :index, @event_id, @weekend_id) %></span>
+<span>
+    <%= link to: event_weekend_day_path(@conn, :index, @event_id, @weekend_id), class: "btn btn-default" do %>
+    <i class="fa fa-step-backward" aria-hidden="true"></i> Zurück
+    <% end %>
+</span>

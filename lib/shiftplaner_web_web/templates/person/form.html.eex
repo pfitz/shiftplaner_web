@@ -6,13 +6,13 @@
   <% end %>
 
   <div class="form-group">
-    <%= label f, :first_name, class: "control-label" %>
+    <%= label f, :first_name, "Vorname", class: "control-label" %>
     <%= text_input f, :first_name, class: "form-control" %>
     <%= error_tag f, :first_name %>
   </div>
 
   <div class="form-group">
-    <%= label f, :sure_name, class: "control-label" %>
+    <%= label f, :sure_name, "Nachnahme", class: "control-label" %>
     <%= text_input f, :sure_name, class: "form-control" %>
     <%= error_tag f, :sure_name %>
   </div>
@@ -24,18 +24,20 @@
   </div>
 
   <div class="form-group">
-    <%= label f, :phone, class: "control-label" %>
+    <%= label f, :phone, "Telefon", class: "control-label" %>
     <%= text_input f, :phone, class: "form-control" %>
     <%= error_tag f, :phone %>
   </div>
 
   <div class="form-group">
-    <%= label f, :is_griller, class: "control-label" %>
+    <%= label f, :is_griller, "Person ist Griller?", class: "control-label" %>
     <%= checkbox f, :is_griller, class: "checkbox" %>
     <%= error_tag f, :is_griller %>
   </div>
 
   <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
+    <%= submit class: "btn btn-primary pull-right" do %>
+    <i class="fa fa-user" aria-hidden="true"></i> Speichern
+    <% end %>
   </div>
 <% end %>

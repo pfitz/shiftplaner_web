@@ -1,10 +1,10 @@
-<h2>Liste aller Events</h2>
+<h2>Eventliste</h2>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Active</th>
+      <th>Eventname</th>
+      <th>Event ist aktiv?</th>
 
       <th></th>
     </tr>
@@ -16,14 +16,33 @@
       <td><%= event.active %></td>
 
       <td class="text-right">
-        <span><%= link "Show", to: event_path(@conn, :show, event), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "List Weekends", to: event_weekend_path(@conn, :index, event), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: event_path(@conn, :edit, event), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: event_path(@conn, :delete, event), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        <span>
+          <%= link to: event_path(@conn, :show, event), class: "btn btn-default btn-xs" do %>
+            <i class="fa fa-eye" aria-hidden="true"></i> Show
+          <% end %>
+        </span>
+        <span>
+          <%= link to: event_weekend_path(@conn, :index, event), class: "btn btn-default btn-xs" do %>
+            <i class="fa fa-list" aria-hidden="true"></i> List Weekends
+          <% end %>
+        </span>
+        <span>
+          <%= link to: event_path(@conn, :edit, event), class: "btn btn-default btn-xs" do %>
+            <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+          <% end %>
+        </span>
+        <span>
+          <%= link to: event_path(@conn, :delete, event), method: :delete, data: [confirm: "Möchten sie das Event #{event.name} wirklich löschen?"], class: "btn btn-danger btn-xs" do %>
+            <i class="fa fa-trash" aria-hidden="true"></i> Delete
+          <% end %>
+        </span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
-
-<span><%= link "New Event", to: event_path(@conn, :new) %></span>
+<span>
+  <%= link to: event_path(@conn, :new), class: "btn btn-default" do %>
+    <i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Event hinzufügen
+  <% end %>
+</span>

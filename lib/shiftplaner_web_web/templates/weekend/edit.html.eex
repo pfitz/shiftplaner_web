@@ -1,5 +1,9 @@
-<h2>Edit Weekend</h2>
+<h2>Wochenende bearbeiten</h2>
 
 <%= render "form.html", Map.put(assigns, :action, event_weekend_path(@conn, :update, @event.id, @weekend.id)) %>
 
-<span><%= link "Back", to: event_weekend_path(@conn, :index, @event.id) %></span>
+<span>
+    <%= link to: event_weekend_path(@conn, :index, @event), class: "btn btn-default" do %>
+    <i class="fa fa-step-backward" aria-hidden="true"></i> Zurück
+    <% end %>
+</span>

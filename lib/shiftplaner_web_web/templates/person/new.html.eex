@@ -1,5 +1,9 @@
-<h2>New Person</h2>
+<h2>Neue Person hinzufügen</h2>
 
 <%= render "form.html", Map.put(assigns, :action, person_path(@conn, :create)) %>
 
-<span><%= link "Back", to: person_path(@conn, :index) %></span>
+<span>
+    <%= link to: person_path(@conn, :index), class: "btn btn-default" do %>
+    <i class="fa fa-step-backward" aria-hidden="true"></i> Zurück
+    <% end %>
+</span>
