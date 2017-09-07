@@ -12,8 +12,14 @@ $susy: (
         box-sizing: border-box,
 );
 
+// Variables
+$headline-font: 'Work Sans', sans-serif;
+$main-font: 'Taviraj', serif;
+
 body {
   @include box-sizing(border-box);
+  font-family: $main-font;
+  font-size: 18px;
 }
 
 $phone: screen 320px 639px;
@@ -23,10 +29,13 @@ $desktop: 960px, min-resolution 1.0dppx;
 h1 {
   font-size: 200%;
   text-align: center;
+  font-family: $headline-font;
 }
 
 h2 {
-  font-size: 120%;
+  font-size: 160%;
+  font-family: $headline-font;
+  margin-bottom: 1em;
 }
 
 .container {
@@ -86,15 +95,29 @@ h2 {
         float: left;
         background-color: #efefef;
         border-bottom: 2px double black;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
       }
       .person-role {
         @include span(4 of 12);
         border-right: 2px dotted darkgrey;
+        padding-bottom: 0.1em;
+        padding-top: 0.1em;
+
+        &:first-child {
+          padding-top: 0.2em;
+        }
       }
 
       .person-name {
         @include span(8 of 12 last);
         padding-left: 10px;
+        padding-bottom: 0.1em;
+        padding-top: 0.1em;
+
+        &:first-child {
+          padding-top: 0.2em;
+        }
       }
 
       /*.chkbox {

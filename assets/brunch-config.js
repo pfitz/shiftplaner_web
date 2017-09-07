@@ -54,7 +54,8 @@ exports.config = {
               includePaths: [
                 'node_modules/susy/sass',
                   'node_modules/breakpoint-sass/stylesheets',
-                  'node_modules/compass-mixins/lib'
+                  'node_modules/compass-mixins/lib',
+                  'node_modules/font-awesome/scss'
             ]
           }
 
