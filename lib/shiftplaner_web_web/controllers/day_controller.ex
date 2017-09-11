@@ -11,7 +11,7 @@ defmodule ShiftplanerWebWeb.DayController do
 
   def new(conn, %{"event_id" => e_id, "weekend_id" => w_id}) do
     changeset = Shiftplaner.change_day(%Day{})
-    render(conn, "new.html", changeset: changeset, event_id: e_id, weekend_id: w_id)
+    render(conn, "new.html", changeset: changeset, event_id: e_id, weekend_id: w_id, today: Date.utc_today())
   end
 
   def create(conn, %{"event_id" => e_id, "weekend_id" => w_id, "day" => day_params}) do
@@ -34,7 +34,7 @@ defmodule ShiftplanerWebWeb.DayController do
   def edit(conn, %{"event_id" => e_id, "weekend_id" => w_id, "id" => id}) do
     day = Shiftplaner.get_day!(id)
     changeset = Shiftplaner.change_day(day)
-    render(conn, "edit.html", day: day, changeset: changeset, event_id: e_id, weekend_id: w_id)
+    render(conn, "edit.html", day: day, changeset: changeset, event_id: e_id, weekend_id: w_id, today: Date.utc_today())
   end
 
   def update(conn, %{"event_id" => e_id, "weekend_id" => w_id, "id" => id, "day" => day_params}) do
