@@ -35,7 +35,7 @@ defmodule ShiftplanerWebWeb.EventController do
   end
 
   def update(conn, %{"id" => id, "event" => event_params}) do
-    event = Shiftplaner.get_event(id)
+    event = Shiftplaner.get_event!(id)
 
     case Shiftplaner.update_event(event, event_params) do
       {:ok, event} ->
