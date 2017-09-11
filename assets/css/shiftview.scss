@@ -22,9 +22,9 @@ body {
   font-size: 18px;
 }
 
-$phone: screen 320px 639px;
-$iPad: screen 640px 959px, min-resolution 2.0dppx;
-$desktop: 960px, min-resolution 1.0dppx;
+$phone: screen 320px 639px, -webkit-min-device-pixel-ratio 2;
+$iPad: screen 640px 959px;
+$desktop: 960px;
 
 h1 {
   font-size: 200%;
