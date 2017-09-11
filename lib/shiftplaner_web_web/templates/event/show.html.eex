@@ -19,7 +19,7 @@
 
 <h2>Weekends for Event</h2>
 <ul>
-  <%= for weekend <- @event.weekends do %>
+  <%= for _weekend <- @event.weekends do %>
   <li> <%= link "test", to: event_weekend_path(@conn, :index, @event.id) %></li>
   <% end %>
 </ul>

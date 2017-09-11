@@ -3,7 +3,4 @@ defmodule ShiftplanerWebWeb.FrontView do
 
   use ShiftplanerWebWeb, :view
 
-  alias Shiftplaner.{Day, Person, Shift, Weekend}
-
-
 end
