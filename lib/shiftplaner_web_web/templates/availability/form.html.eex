@@ -1,7 +1,7 @@
-<%= form_for @conn, availability_path(@conn, :update, @person.id), [as: :avl], fn f -> %>
-  <%= for event <- @events  do %>
-    <%= render "event.html", event: event, f: f, person_id: @person.id %>
-  <% end %>
+<%= form_for @conn, availability_path(@conn, :update, @person.id, @event.id), [as: :avl], fn f -> %>
+
+  <%= render "event.html", event: @event, f: f, person_id: @person.id %>
+
 
  <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>

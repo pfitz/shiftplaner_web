@@ -1,5 +1,5 @@
 <h2>Verfügbarkeit bearbeiten</h2>
 
-<%= render "form.html", Map.put(assigns, :update_avl, person_path(@conn, :update, @person)) %>
+<%= render "form.html", Map.put(assigns, :update_avl, availability_path(@conn, :update, @person, @event)) %>
 
 <span><%= link "Back", to: availability_path(@conn, :index) %></span>

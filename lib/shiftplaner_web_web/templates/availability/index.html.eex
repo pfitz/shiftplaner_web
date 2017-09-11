@@ -6,8 +6,6 @@
       <th>Vorname</th>
       <th>Nachname</th>
       <th>ist Griller?</th>
-
-      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -19,7 +17,7 @@
 
       <td class="text-right">
         <span><%= link "Verfügbarkeiten anzeigen", to: availability_path(@conn, :show, person.id), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Verfügbarkeiten ändern", to: availability_path(@conn, :edit, person.id), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Verfügbarkeiten ändern", to: availability_path(@conn, :index_events, person.id), class: "btn btn-default btn-xs" %></span>
       </td>
     </tr>
 <% end %>

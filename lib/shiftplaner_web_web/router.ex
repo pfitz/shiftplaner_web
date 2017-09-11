@@ -36,11 +36,12 @@ defmodule ShiftplanerWebWeb.Router do
     end
 
     get "/availability", AvailabilityController, :index
-    get "/availability/:id/edit", AvailabilityController, :edit
-    get "/availability/:id", AvailabilityController, :show
-    patch "/availability/:id", AvailabilityController, :update
-    put "/availability/:id", AvailabilityController, :update
-    post "/availability/:id", AvailabilityController, :update
+    get "/availability/:person_id/events", AvailabilityController, :index_events
+    get "/availability/:id/:event_id/edit", AvailabilityController, :edit
+    get "/availability/:id/", AvailabilityController, :show
+    patch "/availability/:id/:event_id", AvailabilityController, :update
+    put "/availability/:id/:event_id", AvailabilityController, :update
+    post "/availability/:id/:event_id", AvailabilityController, :update
     resources "/persons", PersonController
 
     get "/dispositon", DispositionController, :event_index
