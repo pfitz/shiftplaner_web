@@ -1,4 +1,4 @@
-<h2>Edit Person</h2>
+<h2>Verfügbarkeit bearbeiten</h2>
 
 <%= render "form.html", Map.put(assigns, :update_avl, person_path(@conn, :update, @person)) %>
 
