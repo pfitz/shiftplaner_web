@@ -50,7 +50,7 @@ defmodule ShiftplanerWebWeb.EventController do
   def delete(conn, %{"id" => id}) do
     {:ok, _event} =
       id
-      |> Shiftplaner.get_event()
+      |> Shiftplaner.get_event!()
       |> Shiftplaner.delete_event()
 
     conn
