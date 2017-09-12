@@ -40,6 +40,7 @@ defmodule ShiftplanerWeb.Mixfile do
       {:cowboy, "~> 1.0"},
       {:phoenix_ecto, "~> 3.2"},
       {:shiftplaner, path: "../shiftplaner"},
+      {:basic_auth, "~> 2.1.4"},
     ]
   end
 end

@@ -15,6 +15,7 @@ defmodule ShiftplanerWebWeb.Router do
 
   pipeline :admin_layout do
     plug :put_layout, {ShiftplanerWebWeb.LayoutView, :admin_layout }
+    plug BasicAuth, use_config: {:shiftplaner_web, :basic_auth}
   end
   scope "/", ShiftplanerWebWeb do
     pipe_through :browser # Use the default browser stack
