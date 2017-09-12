@@ -12,7 +12,11 @@
         <td><%= event.name %></td>
 
         <td class="text-right">
-            <span><%= link "Wochenenden anzeigen", to: disposition_path(@conn, :weekend_index, event.id), class: "btn btn-default btn-xs" %></span>
+             <span>
+          <%= link to: disposition_path(@conn, :weekend_index, event.id), class: "btn btn-default btn-xs" do %>
+            <i class="fa fa-list" aria-hidden="true"></i> Wochenenden anzeigen
+          <% end %>
+        </span>
         </td>
     </tr>
     <% end %>

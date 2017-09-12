@@ -1,12 +1,12 @@
-<h2>Listing Shifts</h2>
+<h2>Schichtenliste für den <%= date_to_string(@day.date) %></h2>
 
 <table class="table">
     <thead>
     <tr>
-        <th>Worker needed</th>
-        <th>Griller needed</th>
-        <th>Start time</th>
-        <th>End time</th>
+        <th>Benötigte Arbeiter</th>
+        <th>Benötigte Griller</th>
+        <th>Anfangszeit</th>
+        <th>Endzeit</th>
 
         <th></th>
     </tr>
@@ -16,14 +16,24 @@
     <tr>
         <td><%= shift.worker_needed %></td>
         <td><%= shift.griller_needed %></td>
-        <td><%= shift.start_time %></td>
-        <td><%= shift.end_time %></td>
+        <td><%= time_to_string(shift.start_time) %></td>
+        <td><%= time_to_string(shift.end_time) %></td>
 
         <td class="text-right">
-            <span><%= link "Disposition Worker", to: disposition_path(@conn, :edit, @event_id, @weekend_id, @day.id, shift), class: "btn btn-default btn-xs" %></span>
+            <span>
+                <%= link to: disposition_path(@conn, :edit, @event_id, @weekend_id, @day.id, shift), class: "btn btn-default btn-xs" do %>
+                <i class="fa fa-share-alt" aria-hidden="true"></i> Personen einteilen
+                <% end %>
+            </span>
         </td>
     </tr>
     <% end %>
     </tbody>
 </table>
+
+<span>
+    <%= link  to: disposition_path(@conn, :day_index, @event_id, @weekend_id), class: "btn btn-default" do %>
+      <i class="fa fa-step-backward" aria-hidden="true"></i> Züruck zur Tagesliste
+    <% end %>
+</span>
 

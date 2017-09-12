@@ -45,13 +45,13 @@ defmodule ShiftplanerWebWeb.ViewHelpers do
     date_to_string(to)
   end
 
-  defp date_to_string(:no_days) do
+  def date_to_string(:no_days) do
     "-"
   end
 
-  defp date_to_string(date) do
+  def date_to_string(date) do
     {y,m,d} = Date.to_erl(date)
-    "#{d}.#{m}.#{y}"
+    "#{prefix_zero_if_needed(d)}.#{prefix_zero_if_needed(m)}.#{y}"
   end
 
   def dispositioned_worker_or_empty(%Shift{} = shift, counter) when is_integer(counter) do
@@ -71,5 +71,9 @@ defmodule ShiftplanerWebWeb.ViewHelpers do
   defp check_if_dispositioned(person) when is_nil(person), do: " - "
   defp check_if_dispositioned(%Person{} = person) do
     "#{person.first_name} #{person.sure_name}"
+  end
+
+  def time_to_string(%Time{} = time) do
+    "#{prefix_zero_if_needed(time.hour)}:#{prefix_zero_if_needed(time.minute)}"
   end
 end
