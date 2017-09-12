@@ -1,14 +1,14 @@
 <div class="shift"><span class="shift-title"><%= shift_times(@shift) %></span>
     <%= if @shift.griller_needed > 0 do %>
         <%= for i <- 1..@shift.griller_needed do %>
-            <div class="person-role">Griller</div>
-            <div class="person-name"><%= dispositioned_griller_or_empty(@shift, i) %></div>
+            <div class="person-role <%= empty_worker_slot(@shift.dispositioned_griller, i) %>">Griller</div>
+            <div class="person-name <%= empty_worker_slot(@shift.dispositioned_griller, i) %>"><%= dispositioned_griller_or_empty(@shift, i) %></div>
         <% end %>
     <% end %>
     <%= if @shift.worker_needed > 0 do %>
         <%= for i <- 1..@shift.worker_needed do %>
-                <div class="person-role">Person <%= i %></div>
-                <div class="person-name"><%= dispositioned_worker_or_empty(@shift, i) %></div>
+                <div class="person-role <%= empty_worker_slot(@shift.dispositioned_persons, i) %>">Person <%= i %></div>
+                <div class="person-name <%= empty_worker_slot(@shift.dispositioned_persons, i) %>"><%= dispositioned_worker_or_empty(@shift, i) %></div>
         <% end %>
     <% end %>
 </div>

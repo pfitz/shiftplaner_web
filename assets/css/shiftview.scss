@@ -110,6 +110,11 @@ h2 {
         padding-top: 0.1em;
       }
 
+      .empty-shift-slot {
+        background: red;
+        color: white;
+      }
+
       .person-name {
         @include span(8 of 12 last);
         padding-left: 10px;
