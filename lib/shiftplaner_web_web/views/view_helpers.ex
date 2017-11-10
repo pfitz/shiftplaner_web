@@ -54,6 +54,11 @@ defmodule ShiftplanerWebWeb.ViewHelpers do
     "#{prefix_zero_if_needed(d)}.#{prefix_zero_if_needed(m)}.#{y}"
   end
 
+  def date_to_short_string(date) do
+    {y, m, d} = Date.to_erl(date)
+    "#{prefix_zero_if_needed(d)}.#{prefix_zero_if_needed(m)}."
+  end
+
   def dispositioned_worker_or_empty(%Shift{} = shift, counter) when is_integer(counter) do
     dispositioned_or_empty(shift.dispositioned_persons, counter)
   end
