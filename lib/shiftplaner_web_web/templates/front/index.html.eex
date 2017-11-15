@@ -9,9 +9,16 @@
 
 <body>
 <div class="container">
+
     <%= for event <- @events  do %>
     <%= render "event.html", event: event %>
     <% end %>
+    <br />
+    <div class="metadata">
+        <p>Stand: <%= current_datetime_as_string() %></p>
+        <p>http://mwnm.stadtschroeter.de</p>
+    </div>
+
 </div>
 </body>
 

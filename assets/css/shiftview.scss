@@ -26,6 +26,12 @@ $phone: screen 320px 639px, -webkit-min-device-pixel-ratio 2;
 $iPad: screen 640px 959px;
 $desktop: 960px;
 
+.metadata {
+  width: 100%;
+  text-align: center;
+  clear: both;
+}
+
 h1 {
   font-size: 200%;
   text-align: center;
